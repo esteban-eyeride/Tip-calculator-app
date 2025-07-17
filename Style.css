@@ -1,0 +1,290 @@
+/* General Settings */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+/* Primary */
+
+--Green_400: hsl(172, 67%, 45%);
+
+/*Neutral*/
+
+--Green_900: hsl(183, 100%, 15%);
+--Grey_500: hsl(186, 14%, 43%);
+--Grey_400: hsl(184, 14%, 56%);
+--Grey_200: hsl(185, 41%, 84%);
+--Grey_50: hsl(189, 47%, 97%);
+--White: hsl(0, 100%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Mono', Courier, monospace;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+button {
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* General Design */
+
+body {
+    background-color: var(--Grey_200);
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 5rem 0 4rem 0;
+}
+
+/* Main Card Design */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    background-color: var(--White);
+    padding: 3.2rem 2.4rem;
+    border-radius: 2.4rem 2.4rem 0 0;
+}
+
+.calcContainer {
+    padding: 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Input Design */
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+}
+
+label {
+    font-size: 1.6rem;
+    color: var(--Grey_500);
+    font-weight: 600;
+}
+
+.inputContainer svg {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 1.6rem;
+}
+
+input {
+    height: 4.8rem;
+    text-align: end;
+    border: none;
+    background-color: var(--Grey_50);
+    border-radius: .4rem;
+    padding: 0 1.2rem 0 4.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    color: var(--Green_900);
+    transition: all;
+    transition-duration: 150ms;
+}
+
+input:focus {
+    border: .2rem solid var(--Green_400);
+    outline: none;
+}
+
+.labelContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#caption {
+    color: #D16E5B;
+}
+
+.error {
+    border: .2rem solid #D16E5B;
+}
+
+/* Tip Grid Design */
+
+input::placeholder{
+    color: var(--Grey_500);
+}
+
+.tipGrid {
+    display: grid;
+    grid-template-columns:1fr minmax(0,1fr);
+    gap: 1.6rem;
+}
+
+.tipGrid button {
+    height: 4.8rem;
+    background-color: var(--Green_900);
+    color: var(--White);
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    border: none;
+    transition-property: all;
+    transition-duration: 100ms;
+}
+
+.tipGrid button:hover {
+    background-color: var(--Grey_200);
+    color: var(--Green_900);
+}
+
+.tipGrid .active {
+    background-color: var(--Green_400);
+    color: var(--Green_900);
+    pointer-events: none;
+}
+
+.tipGrid input {
+    padding: 0 1.2rem;
+}
+
+/* Green Card */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background-color: var(--Green_900);
+    border-radius: 1.6rem;
+    padding: 4.6rem 2.4rem 2.4rem;
+    overflow: scroll;
+}
+
+.Totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Totals h2 {
+    color: var(--White);
+}
+
+.Totals h3 {
+    color: var(--Grey_400);
+}
+
+.result {
+    color: var(--Green_400);
+    font-weight: 600;
+    font-size: 3.6rem;
+    padding-left: 1.6rem;
+}
+
+aside button {
+    height: 4.8rem;
+    background-color: var(--Green_400);
+    color: var(--Green_900);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    border: none;
+    transition: all;
+    transition-duration: 150ms;
+}
+
+aside button:hover {
+    background-color: var(--Grey_200);
+}
+
+aside .inactive {
+    background-color: var(--Grey_200);
+    opacity: 20%;
+    pointer-events: none;
+}
+
+/* Attribution */
+
+.attribution {
+    display: none;
+}
+
+@media (min-width: 426px) {
+    
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4.8rem 2rem 0;
+    }
+
+    header {
+        top: 3.2rem;
+        padding: 0;
+        position: absolute;
+    }
+
+    main {
+        border-radius: 2.4rem;
+    }
+
+    aside {
+        padding-top: 3.2rem;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1023px) {
+
+    body {
+        padding: 0 2rem;
+    }
+
+    header {
+        top: 10rem;
+    }
+
+    main {
+        flex-direction: row;
+        max-width: 92rem;
+        padding: 3.2rem;
+        gap: 3.2rem;
+    }
+
+    .calcContainer {
+        padding: 1.6rem;
+    }
+
+    .tipGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    aside {
+        min-width: 41.3rem;
+        padding: 4rem;
+    }
+
+    aside .Totals {
+        margin-top: 2rem;
+    }
+
+    aside button {
+        margin-top: auto;
+    }
+}
