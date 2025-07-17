@@ -162,6 +162,10 @@ input::placeholder{
     padding: 0 1.2rem;
 }
 
+.tipGrid input::placeholder {
+    text-align: center;
+}
+
 /* Green Card */
 
 aside {
